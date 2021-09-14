@@ -101,9 +101,7 @@ public final class Main {
               } catch (Exception e) { //throw exception if incorrect type/number of arguments
                 System.out.println("ERROR: Incorrect type/number of arguments!");
               }
-
             }
-
           }
 
         }

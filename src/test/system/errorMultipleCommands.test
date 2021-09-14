@@ -1,0 +1,15 @@
+ARGS
+
+INPUT
+add a
+add b
+add 1
+add a b
+add 1 b
+OUTPUT
+ERROR:
+ERROR:
+ERROR:
+ERROR:
+ERROR:
+END

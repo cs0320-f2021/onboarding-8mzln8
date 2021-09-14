@@ -1,0 +1,9 @@
+ARGS
+
+INPUT
+add 1 2
+add a
+OUTPUT
+3.0
+ERROR:
+END
