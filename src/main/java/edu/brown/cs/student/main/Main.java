@@ -84,7 +84,7 @@ public final class Main {
                 Double ansAdd = mathbot.add(Double.parseDouble(arguments[i + 1]),
                         Double.parseDouble(arguments[i + 2]));
                 System.out.println(ansAdd);
-             } catch (Exception e) { //throw exception if incorrect type of arguments
+             } catch (Exception e) { //throw exception if incorrect type/number of arguments
                 System.out.println("ERROR: Incorrect type/number of arguments!");
               }
 
@@ -98,7 +98,7 @@ public final class Main {
                 Double ansSub = mathbot.subtract(Double.parseDouble(arguments[i + 1]),
                         Double.parseDouble(arguments[i + 2]));
                 System.out.println(ansSub);
-              } catch (Exception e) { //throw exception if incorrect type of arguments
+              } catch (Exception e) { //throw exception if incorrect type/number of arguments
                 System.out.println("ERROR: Incorrect type/number of arguments!");
               }
 
