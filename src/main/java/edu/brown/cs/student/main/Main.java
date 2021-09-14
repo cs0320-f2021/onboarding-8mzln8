@@ -65,52 +65,47 @@ public final class Main {
         try {
           input = input.trim();
           String[] arguments = input.split(" ");
-          System.out.println(arguments[0]);
+
 
           // TODO: complete your REPL by adding commands for addition "add" and subtraction
           //  "subtract"
           //TODO: complete!
-
           MathBot mathbot = new MathBot(); //initialize mathbot
-
           for (int i = 0; i < arguments.length; i++) { //loop through query
 
-            //add operand
-            if (arguments[i].equals("add")) {
-              if ((i + 2 < arguments.length)) {
-                //two elements exist in query
-                try {
-                  Double ansAdd = mathbot.add(Double.parseDouble(arguments[i + 1]),
-                          Double.parseDouble(arguments[i + 2]));
-                  System.out.println(ansAdd);
-                } catch(Exception e) { //method fails because we cant convert to double
-                  System.out.println("ERROR: input not of type double");
-                }
-              } else { //two elements don't exist in query throw exception
-                throw new Exception("ERROR: incorrect number of inputs for add operand");
+
+            if (arguments[i].equals("add")) { //add operand
+
+//              if(i + 2 > arguments.length) { //throw exception if incorrect number of arguments
+//                throw new Exception("ERROR: Incorrect number of arguments!");
+//              }
+
+               try {
+                Double ansAdd = mathbot.add(Double.parseDouble(arguments[i + 1]),
+                        Double.parseDouble(arguments[i + 2]));
+                System.out.println(ansAdd);
+             } catch (Exception e) { //throw exception if incorrect type of arguments
+                System.out.println("ERROR: Incorrect type/number of arguments!");
               }
 
-              //subtract operand
-              if (arguments[i].equals("subtract")) {
-                if ((i + 2 < arguments.length)) {
-                  //two elements exist in query
-                  try {
-                    Double ansSubtract = mathbot.add(Double.parseDouble(arguments[i + 1]),
-                            Double.parseDouble(arguments[i + 2]));
-                    System.out.println(ansSubtract);
-                  } catch (Exception e) {//method fails because we cant convert to double
-                    System.out.println("ERROR: input not of type double");
-                  }
+          } else if (arguments[i].equals("subtract")) { //subtract operand
 
-                } else { //two elements don't exist, throw exception
-                  throw new Exception("ERROR: incorrect number of inputs for subtract operand");
-                }
+//              if(i + 2 > arguments.length) { //throw exception if incorrect number of arguments
+//                throw new Exception("ERROR: Incorrect number of arguments!");
+//              }
+
+               try {
+                Double ansSub = mathbot.subtract(Double.parseDouble(arguments[i + 1]),
+                        Double.parseDouble(arguments[i + 2]));
+                System.out.println(ansSub);
+              } catch (Exception e) { //throw exception if incorrect type of arguments
+                System.out.println("ERROR: Incorrect type/number of arguments!");
               }
-
-
 
             }
+
           }
+
         }
           catch (Exception e) {
           // e.printStackTrace();

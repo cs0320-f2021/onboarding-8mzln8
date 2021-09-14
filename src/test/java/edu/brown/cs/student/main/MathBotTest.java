@@ -28,38 +28,109 @@ public class MathBotTest {
   }
 
   // TODO: add more unit tests of your own
-
   @Test
-  /**
-   * Edge case: adding zeros
-   */
   public void testAdditionZeros() {
     MathBot mazza = new MathBot();
     double output = mazza.add(0, 0);
-    assertEquals(0, output, 0);
+    assertEquals(0, output, 0.01);
   }
 
-  public void testInvalidException() {
-
+  @Test
+  public void testSubtractionZeros() {
+    MathBot mazza = new MathBot();
+    double output = mazza.subtract(0, 0);
+    assertEquals(0, output, 0.01);
   }
 
-  public void testAddTypeException() {
-
+  @Test
+  public void addNothing() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(8, 0);
+    assertEquals(8, output, 0.01);
   }
 
-  public void testAddInputException() {
-
+  @Test
+  public void subtractNothing() {
+    MathBot mazza = new MathBot();
+    double output = mazza.subtract(8, 0);
+    assertEquals(8, output, 0.01);
+  }
+  @Test
+  public void nothingAdd() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(0, 8);
+    assertEquals(8, output, 0.01);
   }
 
-  public void testSubtractTypeException() {
-
+  @Test
+  public void nothingSubtract() {
+    MathBot mazza = new MathBot();
+    double output = mazza.subtract(0, 8);
+    assertEquals(-8, output, 0.01);
   }
 
-  public void testSubtractInputException(){
-
+  @Test
+  public void addNegative() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(18, -17);
+    assertEquals(1, output, 0.01);
   }
 
-  public void testAddSubtract(){
-
+  @Test
+  public void addNegativeToZero() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(18, -18);
+    assertEquals(0, output, 0.01);
   }
+
+  @Test
+  public void negativeAdd() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(-17, 18);
+    assertEquals(1, output, 0.01);
+  }
+
+  @Test
+  public void negativeAddToZero() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(-18, 18);
+    assertEquals(0, output, 0.01);
+  }
+
+  @Test
+  public void negativeNegativeAdd() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(-18, -18);
+    assertEquals(-36, output, 0.01);
+  }
+
+  @Test
+  public void subtractNegative() {
+    MathBot mazza = new MathBot();
+    double output = mazza.subtract(10, -5);
+    assertEquals(15, output, 0.01);
+  }
+
+  @Test
+  public void makeNegative() {
+    MathBot mazza = new MathBot();
+    double output = mazza.subtract(5, 10);
+    assertEquals(-5, output, 0.01);
+  }
+
+  @Test
+  public void multipleNegativeSigns() {
+    MathBot mazza = new MathBot();
+    double output = mazza.subtract(-(-5), (-10));
+    assertEquals(15, output, 0.01);
+  }
+
+
+
+
+
+
+
+
+
 }
