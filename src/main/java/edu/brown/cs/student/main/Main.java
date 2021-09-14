@@ -1,11 +1,6 @@
 package edu.brown.cs.student.main;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.io.*;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
@@ -34,9 +29,11 @@ public final class Main {
    *
    * @param args An array of command line arguments
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     new Main(args).run();
   }
+
+
 
   private String[] args;
 
@@ -44,7 +41,7 @@ public final class Main {
     this.args = args;
   }
 
-  private void run() {
+  private void run() throws Exception {
     // set up parsing of command line flags
     OptionParser parser = new OptionParser();
 
@@ -61,6 +58,7 @@ public final class Main {
     }
 
     // TODO: Add your REPL here!
+
     try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
       String input;
       while ((input = br.readLine()) != null) {
@@ -68,9 +66,53 @@ public final class Main {
           input = input.trim();
           String[] arguments = input.split(" ");
           System.out.println(arguments[0]);
+
           // TODO: complete your REPL by adding commands for addition "add" and subtraction
           //  "subtract"
-        } catch (Exception e) {
+          //TODO: complete!
+
+          MathBot mathbot = new MathBot(); //initialize mathbot
+
+          for (int i = 0; i < arguments.length; i++) { //loop through query
+
+            //add operand
+            if (arguments[i].equals("add")) {
+              if ((i + 2 < arguments.length)) {
+                //two elements exist in query
+                try {
+                  Double ansAdd = mathbot.add(Double.parseDouble(arguments[i + 1]),
+                          Double.parseDouble(arguments[i + 2]));
+                  System.out.println(ansAdd);
+                } catch(Exception e) { //method fails because we cant convert to double
+                  System.out.println("ERROR: input not of type double");
+                }
+              } else { //two elements don't exist in query throw exception
+                throw new Exception("ERROR: incorrect number of inputs for add operand");
+              }
+
+              //subtract operand
+              if (arguments[i].equals("subtract")) {
+                if ((i + 2 < arguments.length)) {
+                  //two elements exist in query
+                  try {
+                    Double ansSubtract = mathbot.add(Double.parseDouble(arguments[i + 1]),
+                            Double.parseDouble(arguments[i + 2]));
+                    System.out.println(ansSubtract);
+                  } catch (Exception e) {//method fails because we cant convert to double
+                    System.out.println("ERROR: input not of type double");
+                  }
+
+                } else { //two elements don't exist, throw exception
+                  throw new Exception("ERROR: incorrect number of inputs for subtract operand");
+                }
+              }
+
+
+
+            }
+          }
+        }
+          catch (Exception e) {
           // e.printStackTrace();
           System.out.println("ERROR: We couldn't process your input");
         }

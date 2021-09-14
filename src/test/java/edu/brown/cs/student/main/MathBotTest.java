@@ -28,4 +28,38 @@ public class MathBotTest {
   }
 
   // TODO: add more unit tests of your own
+
+  @Test
+  /**
+   * Edge case: adding zeros
+   */
+  public void testAdditionZeros() {
+    MathBot mazza = new MathBot();
+    double output = mazza.add(0, 0);
+    assertEquals(0, output, 0);
+  }
+
+  public void testInvalidException() {
+
+  }
+
+  public void testAddTypeException() {
+
+  }
+
+  public void testAddInputException() {
+
+  }
+
+  public void testSubtractTypeException() {
+
+  }
+
+  public void testSubtractInputException(){
+
+  }
+
+  public void testAddSubtract(){
+
+  }
 }
