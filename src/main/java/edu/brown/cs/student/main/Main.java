@@ -58,7 +58,6 @@ public final class Main {
     }
 
     // TODO: Add your REPL here!
-
     try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
       String input;
       while ((input = br.readLine()) != null) {
@@ -75,11 +74,6 @@ public final class Main {
 
 
             if (arguments[i].equals("add")) { //add operand
-
-//              if(i + 2 > arguments.length) { //throw exception if incorrect number of arguments
-//                throw new Exception("ERROR: Incorrect number of arguments!");
-//              }
-
                try {
                 Double ansAdd = mathbot.add(Double.parseDouble(arguments[i + 1]),
                         Double.parseDouble(arguments[i + 2]));
@@ -89,11 +83,6 @@ public final class Main {
               }
 
           } else if (arguments[i].equals("subtract")) { //subtract operand
-
-//              if(i + 2 > arguments.length) { //throw exception if incorrect number of arguments
-//                throw new Exception("ERROR: Incorrect number of arguments!");
-//              }
-
                try {
                 Double ansSub = mathbot.subtract(Double.parseDouble(arguments[i + 1]),
                         Double.parseDouble(arguments[i + 2]));
