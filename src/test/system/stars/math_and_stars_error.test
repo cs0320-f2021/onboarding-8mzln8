@@ -1,0 +1,7 @@
+INPUT
+add 3 5
+naive_neighbors 11 "Sol"
+OUTPUT
+8.0
+ERROR:
+END

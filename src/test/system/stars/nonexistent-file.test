@@ -1,0 +1,7 @@
+INPUT
+stars data/stars/rock-star.csv
+naive_neighbors 5 "Sol"
+OUTPUT
+ERROR:
+ERROR:
+END

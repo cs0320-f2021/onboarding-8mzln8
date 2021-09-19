@@ -1,0 +1,7 @@
+INPUT
+stars data/stars/ed-edd-eddy.csv
+naive_neighbors 1 "courage"
+OUTPUT
+Read 3 stars from data/stars/ed-edd-eddy.csv
+ERROR:
+END

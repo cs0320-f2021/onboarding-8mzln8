@@ -1,0 +1,15 @@
+INPUT
+subtract 10 2
+stars data/stars/ten-star.csv
+naive_neighbors 5 "Sol"
+add 1 2
+OUTPUT
+8.0
+Read 10 stars from data/stars/ten-star.csv
+70667
+71454
+71457
+87666
+118721
+3.0
+END
