@@ -238,15 +238,17 @@ public final class Main {
 
                                 }
 
+                                //get rid of the same element
+                                starList.remove(s);
+
                                 //if the size of starList is 1 (0 since we removed)
                                 // , then we just return that lonley stars ID:
                                 if(starList.size() == 0) {
-                                    System.out.println(s.getID());
+//                                    System.out.println(s.getID());
                                     break nname;
                                 }
 
-                                //get rid of the same element
-                                starList.remove(s);
+
                                     break  ;
 
 
